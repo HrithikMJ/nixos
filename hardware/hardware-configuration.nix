@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
@@ -14,24 +15,26 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e7f8a451-5174-4c7f-8348-2f7af9fc4bde";
+    {
+      device = "/dev/disk/by-uuid/e7f8a451-5174-4c7f-8348-2f7af9fc4bde";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/DCD3-D720";
+    {
+      device = "/dev/disk/by-uuid/DCD3-D720";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/fe7f01d5-2cd6-41bd-b09b-1a3adadb6e77";
+    {
+      device = "/dev/disk/by-uuid/fe7f01d5-2cd6-41bd-b09b-1a3adadb6e77";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/10541a2e-fdfe-4a48-92a7-3cfb36b2b72a"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/10541a2e-fdfe-4a48-92a7-3cfb36b2b72a"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -43,4 +46,7 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # Nvidia
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
 }

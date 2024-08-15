@@ -8,7 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./hardware/hardware-configuration.nix
       ./gdm/gdm.nix
     ];
 
@@ -51,11 +51,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-     layout = "us";
-     xkbVariant = "";
-   };
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
@@ -97,7 +92,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       #  thunderbird
-      
+
     ];
   };
   # Install firefox.
@@ -109,21 +104,25 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # Applications
+    vim
     wget
     vscode
     git
     gh
     brave
-    zsh
-    starship
-    zoxide
-    devbox
     home-manager
+
+    # Utils
+    lshw
+    lsof
+    
+    # Dev Tools
+    postgresql
   ];
   environment.variables.EDITOR = "vim";
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" ]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

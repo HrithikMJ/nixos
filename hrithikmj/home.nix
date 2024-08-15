@@ -27,6 +27,7 @@
   home.packages = with pkgs; [
     chromium
     gnome.dconf-editor
+    devbox
   ];
 
   # basic configuration of git, please change to your own
