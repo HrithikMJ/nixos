@@ -26,6 +26,7 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     chromium
+    gnome.dconf-editor
   ];
 
   # basic configuration of git, please change to your own

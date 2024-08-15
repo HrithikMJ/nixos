@@ -29,8 +29,8 @@
     };
 
     "org/gnome/desktop/wm/preferences" = {
-      button-layout = "close,minimize:appmenu";
-      action-double-click-titlebar = "none";
+      button-layout = "appmenu:minimize,maximize,close";
+      action-double-click-titlebar = "toggle-maximize";
     };
 
     "org/gnome/desktop/peripherals/keyboard" = {
