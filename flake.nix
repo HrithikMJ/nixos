@@ -31,7 +31,15 @@
 
             # TODO replace ryan with your own username
             home-manager.users.hrithikmj = import ./home.nix;
-
+            home-manager.users.gdm = { lib, ... }: {
+              dconf.settings = {
+                "org/gnome/desktop/peripherals/keyboard" = {
+                  numlock-state = true;
+                  remember-numlock-state = true;
+                };
+              };
+              home.stateVersion = "24.05";
+            };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
         ];
