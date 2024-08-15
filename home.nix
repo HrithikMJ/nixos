@@ -23,7 +23,7 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     chromium
-    ];
+  ];
 
   # basic configuration of git, please change to your own
   programs.git = {
@@ -32,9 +32,26 @@
     userEmail = "hrithikmj003@gmail.com";
   };
 
- 
+  programs.starship={
+    enable=true;
+    enableZshIntegration=true;
+    presets=["pastel-powerline"];
+  };
+
+  programs.zoxide = {
+    enable=true;
+    enableZshIntegration=true;
+  };
+  
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    oh-my-zsh = {
+    enable = true;
+    theme = "robbyrussell";
+  };
   };
 
   # This value determines the home Manager release that your
@@ -45,7 +62,7 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "24.04";
+  home.stateVersion = "24.05";
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
