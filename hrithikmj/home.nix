@@ -1,6 +1,9 @@
 { lib, config, pkgs, ... }:
 
 {
+  imports = [
+    ./gnome/gnome.nix
+  ];
   # TODO please change the username & home directory to your own
   home.username = "hrithikmj";
   home.homeDirectory = "/home/hrithikmj";
