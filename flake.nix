@@ -30,7 +30,7 @@
             home-manager.useUserPackages = true;
 
             # TODO replace ryan with your own username
-            home-manager.users.hrithikmj = import ./home.nix;
+            home-manager.users.hrithikmj = import ./hrithikmj/home.nix;
             home-manager.users.gdm = { lib, ... }: {
               dconf.settings = {
                 "org/gnome/desktop/peripherals/keyboard" = {
