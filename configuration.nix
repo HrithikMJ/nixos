@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -42,7 +43,7 @@
     LC_TIME = "en_IN";
   };
 
-  # Enable the X11 windowing system.
+  # # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
@@ -51,12 +52,21 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
+     layout = "us";
+     xkbVariant = "";
+   };
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
+
+  # Bluetooth
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  services.blueman.enable = true;
+  hardware.bluetooth.settings = {
+    General = {
+      Experimental = true;
+    };
+  };
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -66,6 +76,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
@@ -76,14 +87,15 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
+  programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.hrithikmj = {
     isNormalUser = true;
     description = "Hrithik MJ";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -96,15 +108,21 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-	wget
-	vscode
-	git
-	gh
-	asdf-vm
-	brave
-	zsh
-	starship
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    vscode
+    git
+    gh
+    brave
+    zsh
+    chromium
+    starship
+    zoxide
+    python3
+    devbox
+  ];
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
