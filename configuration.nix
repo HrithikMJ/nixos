@@ -96,15 +96,15 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       #  thunderbird
+      
     ];
   };
-
   # Install firefox.
   programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -115,12 +115,12 @@
     gh
     brave
     zsh
-    chromium
     starship
     zoxide
-    python3
     devbox
+    home-manager
   ];
+  environment.variables.EDITOR = "vim";
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
   ];
