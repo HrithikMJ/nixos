@@ -116,9 +116,7 @@
     # Utils
     lshw
     lsof
-    
-    # Dev Tools
-    postgresql
+
   ];
   environment.variables.EDITOR = "vim";
   fonts.packages = with pkgs; [

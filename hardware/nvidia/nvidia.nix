@@ -1,8 +1,6 @@
 { config, lib, pkgs, modulesPath, ... }:
 {
-  imports = [
-    ./nvidia/nvidia.nix
-  ];
+
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
@@ -50,5 +48,4 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  ...
   }
