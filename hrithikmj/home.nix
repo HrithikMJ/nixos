@@ -9,7 +9,7 @@
     # Kitty
     ./kitty/kitty.nix
     # Starship
-    ./starship/starhip.nix
+    ./starship/starship.nix
     # Zoxide
     ./zoxide/zoxide.nix
     # ZSH
