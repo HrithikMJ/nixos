@@ -4,5 +4,4 @@
     enable = true;
     enableZshIntegration = true;
   };
-
 }

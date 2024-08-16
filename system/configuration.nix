@@ -9,7 +9,11 @@
     [
       # Include the results of the hardware scan.
       ../hardware/hardware-configuration.nix
-      # gdm
+
+      # Docker
+      ./docker/docker.nix
+
+      # GDM
       ./gdm/gdm.nix
 
       # Postgres
@@ -93,7 +97,7 @@
     isNormalUser = true;
     description = "Hrithik MJ";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       #  thunderbird
 

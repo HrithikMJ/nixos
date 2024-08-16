@@ -4,14 +4,19 @@
   imports = [
     # Git
     ./git/git.nix
+
     # Gnome
     ./gnome/gnome.nix
-    # Kitty
-    ./kitty/kitty.nix
+
+    # # Kitty
+    # ./kitty/kitty.nix
+
     # Starship
     ./starship/starship.nix
+
     # Zoxide
     ./zoxide/zoxide.nix
+    
     # ZSH
     ./zsh/zsh.nix
   ];
@@ -40,9 +45,6 @@
     gnome.dconf-editor
     devbox
   ];
-
-
-
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
