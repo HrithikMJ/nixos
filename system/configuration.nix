@@ -9,7 +9,11 @@
     [
       # Include the results of the hardware scan.
       ../hardware/hardware-configuration.nix
+      # gdm
       ./gdm/gdm.nix
+
+      # Postgres
+      ./postgresql/postgresql.nix
     ];
 
   # Bootloader.
