@@ -8,15 +8,15 @@
     # Gnome
     ./gnome/gnome.nix
 
-    # # Kitty
-    # ./kitty/kitty.nix
+    # Kitty
+    ./kitty/kitty.nix
 
     # Starship
     ./starship/starship.nix
 
     # Zoxide
     ./zoxide/zoxide.nix
-    
+
     # ZSH
     ./zsh/zsh.nix
   ];
