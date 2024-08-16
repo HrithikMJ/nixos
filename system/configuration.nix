@@ -8,7 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware/hardware-configuration.nix
+      ../hardware/hardware-configuration.nix
       ./gdm/gdm.nix
     ];
 
@@ -116,7 +116,7 @@
     # Utils
     lshw
     lsof
-
+    direnv
   ];
   environment.variables.EDITOR = "vim";
   fonts.packages = with pkgs; [

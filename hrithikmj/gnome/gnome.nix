@@ -50,7 +50,9 @@
         "!StatusNotifierItem"
       ];
     };
-
+    "org/gnome/desktop/wm/keybindings" = {
+      show-desktop = [ "<Super>d" ];
+    };
 
     "org/gnome/desktop/app-folders/folders/34ef9738-be1a-4e66-82a3-4fca8235702a" = {
       apps = ''['lock.desktop', 'logout.desktop', 'shutdown.desktop', 'sleep.desktop', 'restart.desktop']'';
