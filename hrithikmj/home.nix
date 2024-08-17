@@ -44,7 +44,6 @@
     chromium
     gnome.dconf-editor
     devbox
-    gh
   ];
 
   # This value determines the home Manager release that your

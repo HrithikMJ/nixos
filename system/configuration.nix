@@ -117,6 +117,7 @@
     wget
     brave
     vscode
+    gh
 
     # Utils
     git
