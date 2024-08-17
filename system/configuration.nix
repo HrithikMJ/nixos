@@ -115,16 +115,13 @@
     # Applications
     vim
     wget
-    vscode
-    git
-    gh
     brave
-    home-manager
+    vscode
 
     # Utils
+    git
     lshw
     lsof
-    direnv
     openssl
 
   ];
