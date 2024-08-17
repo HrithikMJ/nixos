@@ -1,6 +1,9 @@
 { config, pkgs, vars, ... }:
 
 {
+  import = [
+    "./extentions.nix"
+  ];
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = [
@@ -12,7 +15,6 @@
     };
 
     "org/gnome/desktop/interface" = {
-
 
       #fonts
       font-name = "Source Sans 3 Medium 12";
