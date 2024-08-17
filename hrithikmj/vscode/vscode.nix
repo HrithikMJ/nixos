@@ -28,6 +28,7 @@
       "editor.wordWrap" = "on";
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
+      "window.zoomLevel" = 2.5;
     };
 
   };
