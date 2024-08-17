@@ -1,8 +1,9 @@
-{ config, pkgs, vars, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
     ./extensions.nix
+    ./gtk.nix
   ];
   dconf.settings = {
     "org/gnome/shell" = {
