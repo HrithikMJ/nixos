@@ -125,6 +125,8 @@
     lshw
     lsof
     direnv
+    openssl
+
   ];
   environment.variables.EDITOR = "vim";
   fonts.packages = with pkgs; [

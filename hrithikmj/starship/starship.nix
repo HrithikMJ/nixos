@@ -96,8 +96,8 @@
         };
       python = {
         symbol = "";
-        style = "bg:color_blue";
-        format = "[ $symbol ($version) ] ($style)";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
       time = {
         disabled = false;
