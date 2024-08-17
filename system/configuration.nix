@@ -118,6 +118,7 @@
     brave
     vscode
     gh
+    gnome.gnome-tweaks
 
     # Utils
     git

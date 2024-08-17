@@ -2,7 +2,7 @@
 
 {
   imports = [
-    "./extensions.nix"
+    ./extensions.nix
   ];
   dconf.settings = {
     "org/gnome/shell" = {
