@@ -1,8 +1,8 @@
 { config, pkgs, vars, ... }:
 
 {
-  import = [
-    "./extentions.nix"
+  imports = [
+    "./extensions.nix"
   ];
   dconf.settings = {
     "org/gnome/shell" = {
