@@ -4,6 +4,7 @@
     gnomeExtensions.user-themes
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.clipboard-history
   ];
   dconf.settings = {
     "org/gnome/shell" = {
@@ -12,6 +13,7 @@
         "apps-menu@gnome-shell-extensions.gcampax.github.com"
         "dash-to-dock@micxgx.gmail.com"
         "blur-my-shell@aunetx"
+        "clipboard-history@alexsaveau.dev"
         "system-monitor@gnome-shell-extensions.gcampax.github.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];

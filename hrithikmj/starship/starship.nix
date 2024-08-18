@@ -5,24 +5,24 @@
     enableZshIntegration = true;
     settings = {
       format = lib.concatStrings [
-        "[](#9A348E)"
-        "$os"
+        "[](#d65d0e)"
         "$username"
-        "[](bg:#DA627D fg:#9A348E)"
+        "[](bg:#d79921 fg:#d65d0e)"
         "$directory"
-        "[](fg:#DA627D bg:#FCA17D)"
+        "[](fg:#d79921 bg:#689d6a)"
         "$git_branch"
         "$git_status"
-        "[](fg:#FCA17D bg:#86BBD8)"
+        "[](fg:#689d6a bg:#458588)"
         "$golang"
         "$python"
         "$nodejs"
         "$rust"
-        "[](fg:#86BBD8 bg:#06969A)"
+        "[](fg:#458588 bg:#665c54)"
         "$docker_context"
-        "[](fg:#06969A bg:#33658A)"
+        "[](fg:#665c54 bg:#3c3836)"
         "$time"
-        "[ ](fg:#33658A)"
+        "[](fg:#3c3836)"
+        "$line_break$character"
       ];
 
       # Disable the blank line at the start of the prompt
@@ -32,36 +32,28 @@
       # and use the os module below
       username = {
         show_always = true;
-        style_user = "bg:#9A348E";
-        style_root = "bg:#9A348E";
+        style_user = "bg:#d65d0e fg:#fbf1c7";
+        style_root = "bg:#d65d0e fg:#fbf1c7";
         format = "[ $user ]($style)";
         disabled = false;
       };
-      # An alternative to the username module which displays a symbol that
-      # represents the current operating system
-      os =
-        {
-          style = "bg:#9A348E";
-          disabled = false; # Disabled by default
-        };
+      os = {
+        style = "bg:#d65d0e fg:#fbf1c7";
+        disabled = false; # Disabled by default
+      };
       directory = {
-        style = "bg:#DA627D";
+        style = "fg:#fbf1c7 bg:#d79921";
         format = "[ $path ]($style)";
         truncation_length = 3;
         truncation_symbol = "…/";
       };
-      # Here is how you can shorten some long paths by text replacement
-      # similar to mapped_locations in Oh My Posh:
-      # [directory.substitutions]
-      # "Documents" = "󰈙 "
-      #   "Downloads" = " "
-      # "Music" = " "
-      # "Pictures" = " "
-      # Keep in mind that the order matters. For example:
-      # "Important Documents" = " 󰈙 "
-      # will not be replaced, because "Documents" was already substituted before.
-      # So either put "Important Documents" before "Documents" or use the substituted version:
-      # "Important 󰈙 " = " 󰈙 "
+      # directory.substitutions = {
+      #   Documents = "󰈙";
+      #   Downloads = "";
+      #   Music = "󰝚";
+      #   Pictures = "";
+      #   Developer = "󰲋";
+      # };
       docker_context = {
         symbol = " ";
         style = "bg:#06969A";
@@ -69,41 +61,54 @@
       };
 
       git_branch = {
-        symbol = "";
-        style = "bg:#FCA17D";
-        format = "[ $symbol $branch ]($style)";
+        symbol = "";
+        style = "bg:#689d6a";
+        format = "[[ $symbol $branch ](fg:#fbf1c7 bg:#689d6a)]($style)";
       };
       git_status = {
-        style = "bg:#FCA17D";
-        format = "[$all_status$ahead_behind ]($style)";
+        style = "bg:#689d6a";
+        format = "[[($all_status$ahead_behind )](fg:#fbf1c7 bg:#689d6a)]($style)";
       };
       golang =
         {
-          symbol = " ";
-          style = "bg:#86BBD8";
-          format = "[ $symbol ($version) ]($style)";
+          symbol = "";
+          style = "bg:#458588";
+          format = "[[ $symbol( $version) ](fg:#fbf1c7 bg:#458588)]($style)";
         };
       nodejs = {
         symbol = "";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+        style = "bg:#458588";
+        format = "[[ $symbol( $version) ](fg:#fbf1c7 bg:#458588)]($style)";
       };
       rust =
         {
           symbol = "";
-          style = "bg:#86BBD8";
-          format = "[ $symbol ($version) ]($style)";
+          style = "bg:#458588";
+          format = "[[ $symbol( $version) ](fg:#fbf1c7 bg:#458588)]($style)";
         };
       python = {
         symbol = "";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+        style = "bg:#458588";
+        format = "[[ $symbol( $version) ](fg:#fbf1c7 bg:#458588)]($style)";
       };
       time = {
         disabled = false;
-        time_format = "%R"; # Hour:Minute Format
-        style = " bg:#33658A";
-        format = "[ ♥ $time ]($style)";
+        time_format = "%R";
+        style = "bg:#3c3836";
+        format = "[[  $time ](fg:#fbf1c7 bg:#3c3836)]($style)";
+      };
+
+      line_break = {
+        disabled = false;
+      };
+      character = {
+        disabled = false;
+        success_symbol = "[](bold fg:#98971a)";
+        error_symbol = "[](bold fg:#cc241d)";
+        vimcmd_symbol = "[](bold fg:#98971a)";
+        vimcmd_replace_one_symbol = "[](bold fg:#b16286)";
+        vimcmd_replace_symbol = "[](bold fg:#b16286)";
+        vimcmd_visual_symbol = "[](bold fg:#d79921)";
       };
     };
   };

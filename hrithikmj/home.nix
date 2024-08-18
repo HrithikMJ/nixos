@@ -47,6 +47,7 @@
     chromium
     gnome.dconf-editor
     devbox
+    direnv
   ];
 
   # This value determines the home Manager release that your

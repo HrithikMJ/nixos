@@ -125,6 +125,7 @@
     lshw
     lsof
     openssl
+    gcc
 
   ];
   environment.variables.EDITOR = "vim";
@@ -139,6 +140,12 @@
     })
   ];
 
+  # Remove generations older than 3d
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 3d";
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

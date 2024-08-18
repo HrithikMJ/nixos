@@ -35,7 +35,7 @@
       "editor.wordWrap" = "on";
       "editor.formatOnPaste" = false;
       "editor.formatOnSave" = true;
-      "window.zoomLevel" = 2.5;
+      "window.zoomLevel" = 2;
       "workbench.colorTheme" = "Gruvbox Dark Hard";
     };
 
