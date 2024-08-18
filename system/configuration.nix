@@ -129,7 +129,14 @@
   ];
   environment.variables.EDITOR = "vim";
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Hack" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "DroidSansMono"
+        "Hack"
+        "JetBrainsMono"
+      ];
+    })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

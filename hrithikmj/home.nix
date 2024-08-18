@@ -14,6 +14,9 @@
     # Starship
     ./starship/starship.nix
 
+    # VSCode
+    ./vscode/vscode.nix
+
     # Zoxide
     ./zoxide/zoxide.nix
 

@@ -1,26 +1,20 @@
 { config, lib, pkgs, ... }:
-let
-  orchis = (pkgs.orchis-theme.override {
-    border-radius = 3;
-    tweaks = [ "compact" "macos" "submenu" ];
-  });
-in
 {
   home.packages = with pkgs; [
-    orchis
-    tela-icon-theme
+    gruvbox-gtk-theme
+    gruvbox-plus-icons
   ];
 
   gtk = {
     enable = true;
     theme = {
-      name = "Orchis-Dark";
-      package = orchis;
+      name = "Gruvbox-Dark";
+      package = pkgs.gruvbox-gtk-theme;
     };
 
     iconTheme = {
-      name = "Tela";
-      package = pkgs.tela-icon-theme;
+      name = "Gruvbox-Plus-Dark";
+      package = pkgs.gruvbox-plus-icons;
     };
 
     gtk3.extraConfig = {
