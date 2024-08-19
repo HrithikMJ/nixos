@@ -47,13 +47,13 @@
         truncation_length = 3;
         truncation_symbol = "…/";
       };
-      # directory.substitutions = {
-      #   Documents = "󰈙";
-      #   Downloads = "";
-      #   Music = "󰝚";
-      #   Pictures = "";
-      #   Developer = "󰲋";
-      # };
+      directory.substitutions = {
+        Documents = "󰈙";
+        Downloads = "";
+        Music = "󰝚";
+        Pictures = "";
+        Dev = "󰲋";
+      };
       docker_context = {
         symbol = " ";
         style = "bg:#06969A";
