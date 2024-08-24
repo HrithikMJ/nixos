@@ -116,6 +116,7 @@
     vim
     wget
     brave
+    chromium
     vscode
     gh
     gnome.gnome-tweaks

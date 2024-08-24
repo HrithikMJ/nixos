@@ -17,6 +17,9 @@
     # Starship
     ./starship/starship.nix
 
+    # Tmux
+    ./tmux/tmux.nix
+
     # VSCode
     ./vscode/vscode.nix
 
@@ -47,7 +50,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    chromium
     gnome.dconf-editor
     devbox
     direnv
