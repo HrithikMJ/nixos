@@ -53,6 +53,8 @@
     gnome.dconf-editor
     devbox
     direnv
+    ngrok
+    jdk22_headless
   ];
 
   # This value determines the home Manager release that your

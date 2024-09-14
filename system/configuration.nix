@@ -16,8 +16,8 @@
       # GDM
       ./gdm/gdm.nix
 
-      # Postgres
-      ./postgresql/postgresql.nix
+      # # Postgres
+      # ./postgresql/postgresql.nix
     ];
 
   # Bootloader.
@@ -120,6 +120,7 @@
     vscode
     gh
     gnome.gnome-tweaks
+    polymc
 
     # Utils
     git
