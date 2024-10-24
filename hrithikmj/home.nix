@@ -55,6 +55,7 @@
     direnv
     ngrok
     jdk22_headless
+    pavucontrol
   ];
 
   # This value determines the home Manager release that your
