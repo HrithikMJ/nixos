@@ -14,6 +14,9 @@
     # Kitty
     ./kitty/kitty.nix
 
+    # Ollama
+    ./ollama/ollama.nix
+
     # Starship
     ./starship/starship.nix
 

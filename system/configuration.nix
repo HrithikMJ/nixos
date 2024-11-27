@@ -148,6 +148,18 @@
     dates = "daily";
     options = "--delete-older-than 3d";
   };
+
+  # cuda 
+  nix.settings = {
+    substituters = [
+      "https://cuda-maintainers.cachix.org"
+    ];
+    trusted-public-keys = [
+      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+    ];
+  };
+
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
