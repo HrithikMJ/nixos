@@ -16,6 +16,9 @@
       # GDM
       ./gdm/gdm.nix
 
+      # Ollama
+      ./ollama/ollama.nix
+
       # # Postgres
       # ./postgresql/postgresql.nix
     ];
