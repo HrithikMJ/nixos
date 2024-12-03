@@ -12,6 +12,7 @@
         "org.gnome.Console.desktop"
         "code.desktop"
         "org.gnome.Nautilus.desktop"
+        "spotify.desktop"
       ];
     };
 

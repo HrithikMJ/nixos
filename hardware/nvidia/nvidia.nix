@@ -2,7 +2,7 @@
 {
 
   # Enable OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
   };
 
@@ -48,4 +48,4 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  }
+}

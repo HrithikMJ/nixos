@@ -50,12 +50,13 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    gnome.dconf-editor
+    dconf-editor
     devbox
     direnv
     ngrok
-    jdk22_headless
+    jdk23_headless
     pavucontrol
+    caido
   ];
 
   # This value determines the home Manager release that your

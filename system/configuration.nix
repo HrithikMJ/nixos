@@ -106,6 +106,16 @@
 
     ];
   };
+  users.users.saam = {
+    isNormalUser = true;
+    description = "Saam J";
+    shell = pkgs.zsh;
+    extraGroups = [ "networkmanager" "sudo" ];
+    packages = with pkgs; [
+      #  thunderbird
+
+    ];
+  };
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -122,8 +132,9 @@
     chromium
     vscode
     gh
-    gnome.gnome-tweaks
+    gnome-tweaks
     polymc
+    spotify
 
     # Utils
     git
