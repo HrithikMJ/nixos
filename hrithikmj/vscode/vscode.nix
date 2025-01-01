@@ -37,7 +37,14 @@
       "editor.formatOnSave" = true;
       "window.zoomLevel" = 2;
       "workbench.colorTheme" = "Gruvbox Dark Hard";
+      "[javascript]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "[javascriptreact]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
     };
+
 
   };
 }
