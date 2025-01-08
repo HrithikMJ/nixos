@@ -16,6 +16,9 @@
       # GDM
       ./gdm/gdm.nix
 
+      # K8S
+      ./k8s/k8s.nix
+
       # Ollama
       ./ollama/ollama.nix
 
@@ -159,6 +162,8 @@
     ];
   };
 
+  # k8s
+  # services.kubernetes.roles = [ "master" "node" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
