@@ -16,8 +16,8 @@
       # GDM
       ./gdm/gdm.nix
 
-      # K8S
-      ./k8s/k8s.nix
+      # # K8S
+      # ./k8s/k8s.nix
 
       # Ollama
       ./ollama/ollama.nix
@@ -123,6 +123,8 @@
     polymc
     spotify
     vlc
+    discord
+    telegram-desktop
 
     # Utils
     git
@@ -151,7 +153,7 @@
     dates = "daily";
     options = "--delete-older-than 3d";
   };
-
+  systemd.services."user@".serviceConfig.Delegate = "memory pids cpu cpuset io";
   # cuda 
   nix.settings = {
     substituters = [
