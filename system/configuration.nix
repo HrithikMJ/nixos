@@ -22,6 +22,15 @@
       # Ollama
       ./ollama/ollama.nix
 
+      # SSH
+      ./ssh/ssh.nix
+
+      # Networking
+      ./networking/networking.nix
+
+      # Tailscale
+      ./tailscale/tailscale.nix
+
       # # Postgres
       # ./postgresql/postgresql.nix
     ];
@@ -125,6 +134,7 @@
     vlc
     discord
     telegram-desktop
+    lutris
 
     # Utils
     git
@@ -164,6 +174,55 @@
     ];
   };
 
+  # # Samba
+  # services.samba = {
+  #   enable = true;
+  #   securityType = "user";
+  #   openFirewall = true;
+  #   settings = {
+  #     global = {
+  #       "workgroup" = "WORKGROUP";
+  #       "server string" = "smbnix";
+  #       "netbios name" = "smbnix";
+  #       "security" = "user";
+  #       #"use sendfile" = "yes";
+  #       #"max protocol" = "smb2";
+  #       # note: localhost is the ipv6 localhost ::1
+  #       "hosts allow" = "192.168.0. 127.0.0.1 localhost";
+  #       "hosts deny" = "0.0.0.0/0";
+  #       "guest account" = "nobody";
+  #       "map to guest" = "bad user";
+  #     };
+  #     "public" = {
+  #       "path" = "/home/hrithikmj/Shares/Public";
+  #       "browseable" = "yes";
+  #       "read only" = "no";
+  #       "guest ok" = "yes";
+  #       "create mask" = "0644";
+  #       "directory mask" = "0755";
+  #       "force user" = "username";
+  #       "force group" = "groupname";
+  #     };
+  #     "private" = {
+  #       "path" = "/home/hrithikmj/Shares/Private";
+  #       "browseable" = "yes";
+  #       "read only" = "no";
+  #       "guest ok" = "no";
+  #       "create mask" = "0644";
+  #       "directory mask" = "0755";
+  #       "force user" = "username";
+  #       "force group" = "groupname";
+  #     };
+  #   };
+  # };
+
+  # services.samba-wsdd = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
+
+
+
   # k8s
   # services.kubernetes.roles = [ "master" "node" ];
 
@@ -181,6 +240,10 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
+
+  # networking.firewall.enable = true;
+  # networking.firewall.allowPing = true;
+
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
