@@ -13,11 +13,8 @@
       # Docker
       ./docker/docker.nix
 
-      # # GDM
-      # ./gdm/gdm.nix
-
-      # Hyprland
-      ./hyprland/hyprland.nix
+      # GDM
+      ./gdm/gdm.nix
 
       # # K8S
       # ./k8s/k8s.nix
@@ -128,7 +125,7 @@
     vscode
     gh
     gnome-tweaks
-    # polymc
+    polymc
     spotify
     vlc
     discord
@@ -167,12 +164,8 @@
   nix.settings = {
     substituters = [
       "https://cuda-maintainers.cachix.org"
-      "https://hyprland.cachix.org"
-      "https://nixpkgs-wayland.cachix.org"
     ];
     trusted-public-keys = [
-      "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };

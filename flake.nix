@@ -5,13 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     # home-manager, used for managing user configuration
     polymc.url = "github:PolyMC/PolyMC";
-    # hyprland.url = "github:hyprwm/Hyprland";
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.nixpkgs.follows = "hyprland";
-    # };
-
-    # ags.url = "github:Aylur/ags";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
 

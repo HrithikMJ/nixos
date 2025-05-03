@@ -5,14 +5,11 @@
     # Alacritty
     ./alacritty/alacritty.nix
 
-    # end theme
-    ./end/default.nix
-
     # Git
     ./git/git.nix
 
-    # # Gnome
-    # ./gnome/gnome.nix
+    # Gnome
+    ./gnome/gnome.nix
 
     # Kitty
     ./kitty/kitty.nix
@@ -35,15 +32,7 @@
   # TODO please change the username & home directory to your own
   home.username = "hrithikmj";
   home.homeDirectory = "/home/hrithikmj";
-  home = {
-    sessionVariables = {
-      NIXPKGS_ALLOW_UNFREE = "1";
-      NIXPKGS_ALLOW_INSECURE = "1";
-    };
-    sessionPath = [
-      "$HOME/.local/bin"
-    ];
-  };
+
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
 
