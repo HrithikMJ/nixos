@@ -11,7 +11,6 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "zoxide" ];
       theme = "robbyrussell";
     };
   };
