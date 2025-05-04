@@ -13,6 +13,9 @@
       # Docker
       ./docker/docker.nix
 
+      # Hyprland
+      ./hyprland/hyprland.nix
+
       # GDM
       ./gdm/gdm.nix
 
@@ -140,7 +143,17 @@
     gcc
     pipewire
     bluez
+
+    #hyprland
+    waybar
+    dunst
+    kitty
+    libnotify
+    swww
+    rofi-wayland
   ];
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   environment.variables.EDITOR = "vim";
   fonts.packages = with pkgs; [
     (nerdfonts.override {
@@ -153,6 +166,12 @@
     })
   ];
 
+  # environment.systemPackages = [
+  #   (pkgs.waybar.overrideAttrs (oldAttrs: {
+  #     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+  #   })
+  #   )
+  # ];
   # Remove generations older than 3d
   nix.gc = {
     automatic = true;
