@@ -2,8 +2,6 @@
 {
   programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
-    xwayland.enable = true;
   };
   environment.sessionVariables = {
     # If your cursor becomes invisible
