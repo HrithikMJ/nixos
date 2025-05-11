@@ -5,7 +5,7 @@
     # Alacritty
     ./alacritty/alacritty.nix
 
-
+    # Dotfiles
     ./dotfiles/dotfiles.nix
 
     # Git
@@ -60,6 +60,7 @@
     jdk23_headless
     pavucontrol
     kando
+    playerctl
   ];
 
   # This value determines the home Manager release that your
