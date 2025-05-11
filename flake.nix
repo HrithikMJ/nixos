@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     # home-manager, used for managing user configuration
     polymc.url = "github:PolyMC/PolyMC";
-    impurity.url = "github:outfoxxed/impurity.nix";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
 
@@ -17,7 +16,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, impurity, self, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
       # TODO please change the hostname to your own
       nixos = nixpkgs.lib.nixosSystem {
@@ -25,8 +24,6 @@
         modules = [
           {
             nixpkgs.overlays = [ inputs.polymc.overlay ];
-            imports = [ impurity.nixosModules.impurity ];
-            impurity.configRoot = self;
           }
           ./system/configuration.nix
 

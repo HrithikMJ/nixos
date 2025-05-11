@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if command -v wpctl &>/dev/null; then
+        wpctl get-volume @DEFAULT_SINK@ | awk '{print $2*100}'
+else
+    amixer -D pulse sget Master | awk -F '[^0-9]+' '/Left:/{print $3}'
+fi

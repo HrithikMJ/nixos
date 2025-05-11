@@ -1,5 +1,6 @@
-{ config, impurity, inputs, pkgs, ... }: {
-  xdg.configFile = let link = impurity.link; in {
-    "hypr".source = link ./.config/hypr;
-  };
+{ config, ... }:
+{
+  xdg.configFile."hypr/hyprland.conf".source = ./.config/hypr/hyprland.conf;
+  xdg.configFile."eww".source = ./.config/eww;
+  xdg.configFile."eww".recursive = true;
 }

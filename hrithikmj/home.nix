@@ -5,7 +5,7 @@
     # Alacritty
     ./alacritty/alacritty.nix
 
-    # Dotfiles
+
     ./dotfiles/dotfiles.nix
 
     # Git
