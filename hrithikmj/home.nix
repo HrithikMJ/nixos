@@ -5,6 +5,9 @@
     # Alacritty
     ./alacritty/alacritty.nix
 
+    # Dotfiles
+    ./dotfiles/dotfiles.nix
+
     # Git
     ./git/git.nix
 
@@ -56,7 +59,7 @@
     ngrok
     jdk23_headless
     pavucontrol
-    caido
+    kando
   ];
 
   # This value determines the home Manager release that your

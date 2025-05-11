@@ -5,6 +5,7 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
     gnomeExtensions.clipboard-history
+    gnomeExtensions.kando-integration
   ];
   dconf.settings = {
     "org/gnome/shell" = {
@@ -16,6 +17,7 @@
         "clipboard-history@alexsaveau.dev"
         "system-monitor@gnome-shell-extensions.gcampax.github.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "kando-integration@kando-menu.github.io"
       ];
     };
   };

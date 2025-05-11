@@ -25,6 +25,7 @@
         "editor.tabSize" = "2";
       };
       "workbench.iconTheme" = "gruvbox-material-icon-theme";
+      # "workbench.activityBar.location" = "top";
       "editor.fontFamily" = "'Droid Sans Mono', 'monospace', monospace,'FiraCode Nerd Font'";
       "workbench.settings.applyToAllProfiles" = [
         "editor.fontFamily"

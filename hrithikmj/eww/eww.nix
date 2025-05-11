@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
 {
-  wayland.windowManager.hyprland.enable = true; # enable Hyprland
+  programs.eww.enable = true;
   services.xserver.desktopManager.gnome.enable = false;
 }
