@@ -134,6 +134,7 @@
     discord
     telegram-desktop
     lutris
+    python3
 
     # Utils
     git
@@ -153,6 +154,8 @@
     rofi-wayland
     brightnessctl
     eww
+    cliphist
+    wl-clipboard
   ];
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

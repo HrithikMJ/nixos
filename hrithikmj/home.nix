@@ -61,6 +61,7 @@
     pavucontrol
     kando
     playerctl
+    code-cursor
   ];
 
   # This value determines the home Manager release that your
