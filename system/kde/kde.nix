@@ -1,0 +1,13 @@
+{ config, pkgs, ... }:
+
+{
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.settings.General.DisplayServer = "wayland";
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
+}

@@ -11,8 +11,8 @@
     # Git
     ./git/git.nix
 
-    # Gnome
-    ./gnome/gnome.nix
+    # # Gnome
+    # ./gnome/gnome.nix
 
     # Kitty
     ./kitty/kitty.nix

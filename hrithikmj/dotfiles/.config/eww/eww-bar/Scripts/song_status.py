@@ -24,6 +24,6 @@ while True:
 
         subprocess.run(f'echo "{status}"', shell=True)
     else:
-        subprocess.run("echo 'Play something'", shell=True)
+        subprocess.run("echo 'Play Something'", shell=True)
 
     time.sleep(0.2)

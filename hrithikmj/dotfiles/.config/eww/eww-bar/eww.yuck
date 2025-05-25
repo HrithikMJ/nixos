@@ -54,7 +54,7 @@
   :monitor 0
   :windowtype "normal"
   :geometry (geometry
-    :y "-3px"
+    :y "60px"
     :x "83%"
     :width "17%"
   )
