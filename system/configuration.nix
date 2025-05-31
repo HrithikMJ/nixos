@@ -16,11 +16,11 @@
       # Hyprland
       ./hyprland/hyprland.nix
 
-      # # GDM
-      # ./gdm/gdm.nix
+      # GDM
+      ./gdm/gdm.nix
 
-      # KDE
-      ./kde/kde.nix
+      # # KDE
+      # ./kde/kde.nix
 
       # # K8S
       # ./k8s/k8s.nix
@@ -197,12 +197,12 @@
     substituters = [
       "https://cuda-maintainers.cachix.org"
       "https://hyprland.cachix.org"
-      "https://app.cachix.org"
+      # "https://app.cachix.org"
     ];
     trusted-public-keys = [
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      "ags.cachix.org-1:naAvMrz0CuYqeyGNyLgE010iUiuf/qx6kYrUv3NwAJ8="
+      # "ags.cachix.org-1:naAvMrz0CuYqeyGNyLgE010iUiuf/qx6kYrUv3NwAJ8="
     ];
   };
 
