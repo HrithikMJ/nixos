@@ -1,24 +1,35 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions;[
-      github.github-vscode-theme
-      golang.go
-      ms-python.black-formatter
-      ms-python.python
-      ms-python.vscode-pylance
-      ms-python.debugpy
-      vscode-icons-team.vscode-icons
-      jnoortheen.nix-ide
-      esbenp.prettier-vscode
-      jdinhlife.gruvbox
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
-      name = "gruvbox-material-icon-theme";
-      publisher = "JonathanHarty";
-      version = "1.1.5";
-      sha256 = "sha256-86UWUuWKT6adx4hw4OJw3cSZxWZKLH4uLTO+Ssg75gY=";
-    }];
+    extensions =
+      with pkgs.vscode-extensions;
+      [
+        github.github-vscode-theme
+        golang.go
+        ms-python.black-formatter
+        ms-python.python
+        ms-python.vscode-pylance
+        ms-python.debugpy
+        vscode-icons-team.vscode-icons
+        jnoortheen.nix-ide
+        esbenp.prettier-vscode
+        jdinhlife.gruvbox
+        charliermarsh.ruff
+      ]
+      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "gruvbox-material-icon-theme";
+          publisher = "JonathanHarty";
+          version = "1.1.5";
+          sha256 = "sha256-86UWUuWKT6adx4hw4OJw3cSZxWZKLH4uLTO+Ssg75gY=";
+        }
+      ];
     userSettings = {
       "[nix]" = {
         "editor.defaultFormatter" = "jnoortheen.nix-ide";
@@ -44,8 +55,10 @@
       "[javascriptreact]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+      "[python]" = {
+        "editor.defaultFormatter" = "charliermarsh.ruff";
+      };
     };
-
 
   };
 }

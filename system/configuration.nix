@@ -5,41 +5,40 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ../hardware/hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ../hardware/hardware-configuration.nix
 
-      # Docker
-      ./docker/docker.nix
+    # Docker
+    ./docker/docker.nix
 
-      # Hyprland
-      ./hyprland/hyprland.nix
+    # Hyprland
+    ./hyprland/hyprland.nix
 
-      # GDM
-      ./gdm/gdm.nix
+    # GDM
+    ./gdm/gdm.nix
 
-      # # KDE
-      # ./kde/kde.nix
+    # # KDE
+    # ./kde/kde.nix
 
-      # # K8S
-      # ./k8s/k8s.nix
+    # # K8S
+    # ./k8s/k8s.nix
 
-      # Ollama
-      ./ollama/ollama.nix
+    # Ollama
+    ./ollama/ollama.nix
 
-      # SSH
-      ./ssh/ssh.nix
+    # SSH
+    ./ssh/ssh.nix
 
-      # Networking
-      ./networking/networking.nix
+    # Networking
+    ./networking/networking.nix
 
-      # Tailscale
-      ./tailscale/tailscale.nix
+    # Tailscale
+    ./tailscale/tailscale.nix
 
-      # # Postgres
-      # ./postgresql/postgresql.nix
-    ];
+    # # Postgres
+    # ./postgresql/postgresql.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -76,7 +75,6 @@
   # # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
@@ -98,7 +96,11 @@
     isNormalUser = true;
     description = "Hrithik MJ";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [
       #  thunderbird
 
@@ -108,7 +110,10 @@
     isNormalUser = true;
     description = "Saam J";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "sudo" ];
+    extraGroups = [
+      "networkmanager"
+      "sudo"
+    ];
     packages = with pkgs; [
       #  thunderbird
 
@@ -119,7 +124,10 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -131,7 +139,7 @@
     vscode
     gh
     gnome-tweaks
-    polymc
+    # polymc
     spotify
     vlc
     discord
@@ -148,6 +156,9 @@
     gcc
     pipewire
     bluez
+    # nixpkgs-fmt
+    ruff
+    nixfmt-rfc-style
 
     #hyprland
     waybar
@@ -165,18 +176,15 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   environment.sessionVariables = {
-    FLAKE = "/home/hrithikmj/nixos";
+    NH_FLAKE = "/home/hrithikmj/nixos";
   };
   environment.variables.EDITOR = "vim";
   fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-        "Hack"
-        "JetBrainsMono"
-      ];
-    })
+    nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.fira-code
+
   ];
 
   # environment.systemPackages = [
@@ -192,7 +200,7 @@
     options = "--delete-older-than 7d";
   };
   systemd.services."user@".serviceConfig.Delegate = "memory pids cpu cpuset io";
-  # cuda 
+  # cuda
   nix.settings = {
     substituters = [
       "https://cuda-maintainers.cachix.org"
@@ -252,8 +260,6 @@
   #   enable = true;
   #   openFirewall = true;
   # };
-
-
 
   # k8s
   # services.kubernetes.roles = [ "master" "node" ];
